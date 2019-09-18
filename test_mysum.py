@@ -34,20 +34,23 @@ def mysum(n):
         x += i
     return x
 
-p = subprocess.Popen(['python3', sys.argv[1]],
+done = False
+
+p = subprocess.Popen([sys.executable, sys.argv[1]],
         stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-while True:
-    line = os.read(p.stdout.fileno(), 256).decode()
-    if line == '':
-        break
-    elif line == 'n? ':
-        n = randint(1, 100)
-        inp = '{n}'.format(n=n) + os.linesep
-        p.stdin.write(inp.encode())
-        p.stdin.flush()
-    else:
-        ans = int(line)
-        if ans == mysum(n):
-            print('OK')
+while not done:
+    for line in os.read(p.stdout.fileno(), 256).decode().split(os.linesep):
+        if line == '':
+            done = True
+            break
+        elif line == 'n? ':
+            n = randint(1, 100)
+            inp = '{n}'.format(n=n) + os.linesep
+            p.stdin.write(inp.encode())
+            p.stdin.flush()
         else:
-            print('What?')
+            ans = int(line)
+            if ans == mysum(n):
+                print('Passed')
+            else:
+                print('Failed')
