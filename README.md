@@ -1,6 +1,6 @@
 # test_mysum.py and mysum.py
 
-These scripts demonstrate how to communicate with another Python script
+These Python scripts demonstrate how to communicate with another Python script
 bi-directionally.
 
 ## Usage

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 ################################################################################
 # Name:    test_mysum.py and mysum.py
-# Purpose: These scripts demonstrate how to communicate with another Python
-#          script bi-directionally.
+# Purpose: These Python scripts demonstrate how to communicate with another
+#          Python script bi-directionally.
 # Usage:   ./test_mysum.py mysum.py
 # Author:  Huidae Cho
 # Since:   September 18, 2019
