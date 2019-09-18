@@ -6,7 +6,7 @@ bi-directionally.
 ## Usage
 
 ```bash
-./test_mysum.py mysum.py
+python3 test_mysum.py mysum.py
 ```
 
 ## License
